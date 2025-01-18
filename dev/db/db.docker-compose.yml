@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:17.0-alpine
+    container_name: svelte-starter
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - 5433:5432
+    volumes:
+      - ./build-db.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  svelte-starter:
