@@ -4,6 +4,7 @@
 	import PostForm from '$lib/forms/postForm.svelte';
 	import Chatline from '$lib/components/custom/Chatline.svelte';
 	import type { Post } from '$lib/server/db/core/posts';
+	import type { DeletePostParams } from '$lib/types';
 	import * as Dialog from '$lib/components/ui/dialog';
 	import SessionDisplay from '$lib/components/custom/SessionDisplay.svelte';
 	import { Button } from '$lib/components/ui/button';
@@ -24,7 +25,7 @@
 			method: 'DELETE',
 			body: JSON.stringify({
 				id
-			})
+			} as DeletePostParams)
 		});
 
 		if (!response.ok) {

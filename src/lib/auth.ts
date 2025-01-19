@@ -20,19 +20,6 @@ export const auth = betterAuth({
 			verification: verification
 		}
 	}),
-	user: {
-		additionalFields: {
-			roleSelected: {
-				type: 'string'
-			},
-			onboardingCompleted: {
-				type: 'boolean'
-			},
-			stripeId: {
-				type: 'string'
-			}
-		}
-	},
 	baseURL: BETTER_AUTH_URL,
 	secret: BETTER_AUTH_SECRET,
 	trustedOrigins: [BETTER_AUTH_TRUSTED_ORIGINS],
