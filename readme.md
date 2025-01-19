@@ -23,7 +23,7 @@ A modern Svelte starter template with authentication, database integration, form
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/svelte-starter.git
+git clone https://github.com/IcelandicIcecream/svelte-starter.git
 cd svelte-starter
 ```
 
