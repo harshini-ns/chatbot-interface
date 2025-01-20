@@ -117,7 +117,7 @@ Authentication is handled by better-auth, supporting:
 
 Forms are built using sveltekit-superforms:
 
-1. Create a Zod schema in `lib/schema`
+1. Create a Zod schema in `lib/forms`
 2. Create a form component in `lib/forms`
 3. Use the form component with superforms for validation and submission
 

@@ -5,8 +5,13 @@
 	import { goto } from '$app/navigation';
 	import { toast } from 'svelte-sonner';
 	import { LogOut } from 'lucide-svelte';
+	import type { AuthSession } from '$lib/auth-client';
 
-	let { session } = $props();
+	let {
+		session
+	}: {
+		session: AuthSession;
+	} = $props();
 
 	const handleLogout = async () => {
 		const response = await signOut();
