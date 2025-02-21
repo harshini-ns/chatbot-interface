@@ -9,6 +9,7 @@
 	import SessionDisplay from '$lib/components/custom/SessionDisplay.svelte';
 	import { Button } from '$lib/components/ui/button';
 	import { toast } from 'svelte-sonner';
+	import { checkAIHealth } from '$lib/huma-ai/huma-api.js';
 
 	const session = data.session;
 	let posts = $state(data.posts);
@@ -18,6 +19,16 @@
 	const handlePostCreation = () => {
 		selectedPost = undefined;
 		showCreatePostModal = true;
+	};
+
+	const handleGetAIHealth = async () => {
+		const response = await checkAIHealth();
+
+		if (response) {
+			toast.success('AI is healthy');
+		} else {
+			toast.error('AI is not healthy');
+		}
 	};
 
 	const handlePostDeletion = async (id: string) => {
@@ -60,7 +71,7 @@
 	{/each}
 {/if}
 
-<!-- Create Job Dialog -->
+<!-- Create Post Dialog -->
 <Dialog.Root bind:open={showCreatePostModal}>
 	<Dialog.Content class="max-h-[90vh] max-w-3xl overflow-y-auto">
 		<div>
@@ -68,3 +79,5 @@
 		</div>
 	</Dialog.Content>
 </Dialog.Root>
+
+<button onclick={handleGetAIHealth}>Check AI Health</button>

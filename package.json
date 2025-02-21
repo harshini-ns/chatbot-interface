@@ -15,7 +15,8 @@
 		"reset-db": "docker compose -f dev/db/db.docker-compose.yml down -v && docker compose -f dev/db/db.docker-compose.yml up -d",
 		"db:push": "drizzle-kit push",
 		"db:migrate": "drizzle-kit migrate",
-		"db:studio": "drizzle-kit studio"
+		"db:studio": "drizzle-kit studio",
+		"generate:sdk": "openapi-typescript http://localhost:8080/openapi.json --output src/lib/huma-ai/ai.ts"
 	},
 	"devDependencies": {
 		"@eslint/compat": "^1.2.5",
@@ -56,6 +57,8 @@
 		"dotenv": "^16.4.7",
 		"drizzle-orm": "^0.33.0",
 		"drizzle-zod": "^0.5.1",
+		"openapi-fetch": "^0.13.4",
+		"openapi-typescript": "^7.6.1",
 		"pg": "^8.13.1",
 		"postgres": "^3.4.5"
 	}
