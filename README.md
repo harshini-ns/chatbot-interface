@@ -137,3 +137,5 @@ npx shadcn-svelte@latest add [component-name]
 - `pnpm check` - Type-check the project
 - `pnpm lint` - Lint and format code
 - `pnpm format` - Format code with Prettier
+
+  ##demo video https://youtu.be/S7eHF7N1lE4
